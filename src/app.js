@@ -1,13 +1,17 @@
 import React from 'react'
-
-export { Home } from './components'
-export { About } from './components'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import { Home } from './components'
+import { About } from './components'
 
 export default function App() {
   return (
     <>
-      <Home />
-      <About />
+      <Router>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/about" exact component={About} />
+        </Switch>
+      </Router>
     </>
   )
 }
